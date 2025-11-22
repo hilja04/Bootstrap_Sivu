@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Text:wght@200..700&display=swap');
+
+        /* Taustan väri */
+        .navbar-custom {
+            background-color: rgba(29, 98, 35, 0.9);
+        }
+
+        /* Brandin ja tekstin väri */
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: rgb(255, 255, 255);
+        }
+
+        /* Linkkien väri */
+        .navbar-custom .navbar-nav .nav-link {
+            color: rgb(251, 249, 250);
+        }
+
+        /* Hover ja aktiivinen linkki */
+        .navbar-custom .nav-item.active .nav-link,
+        .navbar-custom .nav-item:hover .nav-link {
+            color: #ffffff;
+        }
+
+        .custom-toggler .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(32, 15, 127, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+
+        .custom-toggler.navbar-toggler {
+            border-color: rgba(32, 15, 127, 0.5);
+        }
+
+        .nav-item .dropdown-menu a:hover {
+            color: white !important;
+            background: rgb(47, 128, 49) !important;
+            cursor: pointer;
+        }
+
+        /* Bränditeksti  */
+        .navbar-custom .navbar-brand {
+            font-family: "Arimo", sans-serif;
+            font-weight: 700;
+        }
+
+        /* Navigointilinkit */
+        .navbar-custom .navbar-nav .nav-link {
+            font-family: "Stack Sans Text", sans-serif;
+            font-weight: 600;
+
+        }
+
+        /* Leipäteksti */
+        body,
+        p {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+        }
+
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+
+            object-fit: cover;
+        }
+
+        body {
+            background-color: #50915d;
+            position: relative;
+
+        }
+
+        .grid-image {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+
+            object-fit: cover;
+        }
+
+        .nav-link.active {
+            color: rgb(53, 142, 215) !important;
+        }
+
+        .card-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .accordion-header {
+            background-color: #50915d !important;
+        }
+
+        .accordion-body img {
+            width: 130px;
+            height: auto;
+        }
+
+        .accordion-button {
+            background-color: #1d6223 !important;
+            color: white !important;
+            font-weight: bold !important;
+        }
+
+        .accordion-custom {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .small-video {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .table_style {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .table_style th,
+        .table_style td {
+            background-color: #1d6223;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+
+    <main id="alku" class="container" style="margin-top:80px;">¨
+        <!-- Navigaatio -->
+        <nav class="navbar navbar-expand-sm  navbar-custom fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#alku">
+                    <img src="https://www.freeiconspng.com/uploads/food-icon-7.png" alt="Logo" style="width:40px;"
+                        class="rounded-pill">
+                    Taco Restaurant
+                </a>
+                <button class="custom-toggler navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#etusivu">Etusivu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ravintola">Ravintola</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown">Menu</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#menu">A la carte</a></li>
+                                <li><a class="dropdown-item" href="#virvoitusjuomat">Juomat</a></li>
+                            </ul>
+                        </li>
+                         <li class="nav-item">
+                            <a class="nav-link" href="#videot">Videoita</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#yhteystiedot">Ota yhteyttä</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Carousel -->
+        <div id="etusivu" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg" alt="Kana tortilla"
+                        class="d-block w-100">
+
+                    <div class="carousel-caption">
+                        <h3>Talven uutuudet</h3>
+                        <p>Kanahalloumi tortilla</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/2338015/pexels-photo-2338015.jpeg" alt="Tacojen teko"
+                        class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>Rakkaudella valmistettu</h3>
+                        <p>Nopeasti, mutta hyvin</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/3642718/pexels-photo-3642718.jpeg" alt="Taco ateriat"
+                        class="d-block w-100">
+
+                    <div class="carousel-caption">
+                        <h3>Ryhmä ateriat</h3>
+                        <p>Tilaa valmiit ateriat sinulle ja kaverillesi</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.pexels.com/photos/7613556/pexels-photo-7613556.jpeg" alt="Tacon liha"
+                        class="d-block w-100">
+                    <div class="carousel-caption">
+                        <h3>Maku elämyksiä
+                        </h3>
+                        <p>Tacomme on valmistettu kotimaiseta lihasta</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <!-- Grid osio -->
+        <div id="ravintola" class="container" style="padding-top:70px; margin-top:30px; margin-bottom:50px">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg" alt="Ravintolan kuva"
+                        class="img-fluid grid-image rounded-start">
+                </div>
+                <div class="col-md-4 d-flex justify-content-center flex-column text-center">
+                    <h3 style="padding-top:20px;">Tervetuloa Taco Ravintolaan</h3>
+                    <p>Meiltä löydät herkulliset tacot, raikkaat juomat ja tunnelmallisen miljöön. Tule nauttimaan
+                        herkullisesta ruuasta ja hyvästä tunnelmasta.</p>
+                    <h4>Aukioloajat</h3>
+                        <p>Ma-Pe 10:00 - 23:00</p>
+                        <p>La 11:00 - 21:00</p>
+                        <p>Su 11:00 - 18:00</p>
+
+                </div>
+                <div class="col-md-4">
+                    <img src="https://images.pexels.com/photos/1441122/pexels-photo-1441122.jpeg" alt="Juomien kuva"
+                        class="img-fluid grid-image rounded-end">
+                </div>
+            </div>
+        </div>
+        <!-- Card osio Menu -->
+        <div class="container my-5" id="menu">
+            <div class="d-flex justify-content-around flex-wrap">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.pexels.com/photos/9624298/pexels-photo-9624298.jpeg" class="card-img"
+                        alt="tortillat">
+                    <div class="card-body">
+                        <h5 class="card-title">Tortillat</h5>
+                        <p class="card-text">
+                            Meiltä löydät monipuolisen valikoiman tortilloja kuten kana-, naudanliha- ja
+                            kasvistortilloja.
+                            Valikoimastamme löytyy myös vegaanisia ja gluteenittomia vaihtoehtoja.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.pexels.com/photos/5837196/pexels-photo-5837196.jpeg" class="card-img"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Tacot</h5>
+                        <p class="card-text">
+                            Tacoja löytyy kaikkien makuun perinteisistä tacoista erikoisempiin maku elämyksiin. Voit
+                            myös suunnitella oman tacon ja valita itse täytteet.
+                        </p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.pexels.com/photos/2097090/pexels-photo-2097090.jpeg" class="card-img"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Salaatit</h5>
+                        <p class="card-text">
+                            Kevyeempään nälkään meiltä löytyy myös salaatteja kuten lohi- ja caesar salaatit nachojen
+                            kera.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="width: 18rem;">
+                    <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg" class="card-img"
+                        alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Jälkiruuat</h5>
+                        <p class="card-text">
+                            Makean nälkään ja jälkiruuaksi meiltä löytyy panukakkuja, brownieita ja jääätelöä.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Accordion Juoma menu -->
+        <div  id="virvoitusjuomat" class="accordion accordion-flush accordion-custom" style=" margin-bottom:70px;padding-top:50px; ">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Virvoitusjuomat
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5>Virvoitusjuomat</h5>
+                                <ul>
+                                    <li>Pepsi</li>
+                                    <li>Pepsi Max</li>
+                                    <li>Fanta</li>
+                                    <li>Sprite</li>
+                                    <li>Kivennäisvesi</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="https://images.pexels.com/photos/8879617/pexels-photo-8879617.jpeg"
+                                    class="img-fluid rounded according-body-img" alt="Virvoitusjuomat">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Oluet ja Viinit
+                    </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <ul>
+                                    <li>Heineken</li>
+                                    <li>Lapin kulta</li>
+                                    <li>Pinot Noir</li>
+                                    <li>Chardonney</li>
+                                    <li>Sauvignon Blanc</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <img src="https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg"
+                                    class="img-fluid rounded according-body-img" alt="Virvoitusjuomat">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Kahvit ja Teet
+                    </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <ul>
+                                    <li>Rooibos</li>
+                                    <li>Musta tee</li>
+                                    <li>Juhla Mokka</li>
+                                    <li>Kulta Katriina</li>
+                                    <li>Latte</li>
+
+                                </ul>
+                            </div>
+                            <div class="col-md-4">
+                                <img src=" https://images.pexels.com/photos/302904/pexels-photo-302904.jpeg"
+                                    class="img-fluid rounded according-body-img" alt="Virvoitusjuomat">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="nav nav-tabs justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#home">Chicken Tacos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu1">Beef Tacos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#menu2">Raining Tacos</a>
+            </li>
+        </ul>
+
+        <!--  -->
+        <div id="videot" class="tab-content" style="padding-bottom: 70px;">
+            <div class="tab-pane container active" id="home">
+                <div class="ratio ratio-16x9 small-video">
+                    <iframe src="https://www.youtube.com/embed/ALeF0GUCSSk?si=RyhluVHpZ7kdvlZD" title="YouTube video"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="menu1">
+                <div class="ratio ratio-16x9 small-video">
+                    <iframe src="https://www.youtube.com/embed/cNLp6WhP2UI?si=Ky0rS0dN5ug1Kr2o" title="YouTube video"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="tab-pane container fade" id="menu2">
+                <div class="ratio ratio-16x9 small-video">
+                    <iframe src="https://www.youtube.com/embed/npjF032TDDQ?si=LuKHSP80nQ020J0A" title="YouTube video"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="yhteystiedot" class="container mt-3" style="padding-bottom:100px">
+            <h2 style="text-align: center;">Yhteystiedot</h2>
+            <div class="table-responsive">
+                <table  class="table table_style">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Position</th>
+                            <th>Email</th>
+                            <th>Phone number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maija Maijikki</td>
+                            <td>Ravintola päälikkö</td>
+                            <td>MaijaMaijikki@example.com</td>
+                            <td>0444555444</td>
+                        </tr>
+                        <tr>
+                            <td>Pete Pelokas</td>
+                            <td>Hovimestari</td>
+                            <td>pete@example.com</td>
+                            <td>0444666444</td>
+                        </tr>
+                        <tr>
+                            <td>Kyllikki Kukkanen</td>
+                            <td>Tarjoilija</td>
+                            <td>Kukkanen@example.com</td>
+                            <td>0222333444</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+
+</html>
